@@ -1,3 +1,4 @@
+package com.sln.proteintracker;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
