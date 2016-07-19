@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// initParams as annotation can be used to provide default values, which can be overriden in web.xml: <init-param> </init-param>
 @WebServlet(urlPatterns = {"/SimpleServlet", "*.aaa"}, initParams = {@WebInitParam(name="ProductName", value="Welcome Application")})
 public class SimpleServlet extends HttpServlet {
     private String message;
