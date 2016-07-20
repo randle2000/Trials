@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- groupId differentiate your company. it's the same as your package but can be anything -->
+	<!-- in <packaging> you specify how you want to package your project: jar, war, etc. --> 
+	<groupId>com.sln</groupId>
+	<artifactId>HelloWorld</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+	
+	<!-- 
+	<dependencies>
+    	<dependency>
+    		<groupId>commons-lang</groupId>
+    		<artifactId>commons-lang</artifactId>
+    		<version>2.1</version>
+    	</dependency>
+
+    	<dependency>
+    		<groupId>junit</groupId>
+    		<artifactId>junit</artifactId>
+    		<version>4.10</version>
+    		<scope>test</scope>
+    	</dependency>
+
+    	<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>4.1.6.Final</version>
+    		<scope>test</scope>
+    	</dependency>
+
+	</dependencies>
+	-->
+	
+	
+	<build>
+		<plugins>
+			<!-- compiler plugin 
+			Used for compile and test phases
+			By default Maven uses JRE 1.5, lines below will override it to 1.7  
+			Invokes Javac, but with the classpath set from the dependencies
+			For doc see: http://maven.apache.org/plugins/maven-compiler-plugin/index.html -->
+			<plugin>
+    			<groupId>org.apache.maven.plugin</groupId>
+    			<artifactId>maven-compiler-plugin</artifactId>
+    			<version>2.3.1</version>
+    			<configuration>
+    				<source>1.7</source>
+    				<target>1.7</target>
+    			</configuration>
+			</plugin>
+			
+			<!-- jar plugin 
+			Used for package phase, can include/exclude stuff
+			For doc see: http://maven.apache.org/plugins/maven-jar-plugin/index.html -->
+			<plugin>
+    			<groupId>org.apache.maven.plugin</groupId>
+    			<artifactId>maven-jar-plugin</artifactId>
+    			<version>2.4</version>
+    			<configuration>
+    				<useDefaultManifestFile>true</useDefaultManifestFile>
+    			</configuration>
+			</plugin>
+
+			<!-- source plugin 
+			Used if you want to include source code in a jar file.
+			Defaults to package phase so people usually override it to say install phase in order not to slow system down every time you package
+			For doc see: http://maven.apache.org/plugins/maven-source-plugin/index.html -->
+			<plugin>
+    			<groupId>org.apache.maven.plugin</groupId>
+    			<artifactId>maven-source-plugin</artifactId>
+    			<version>2.2.1</version>
+    			<executions>
+    				<execution>
+    					<!--  id can be anything, it's just printed in console output -->
+    					<id>attach-sources</id>
+    					<phase>verify</phase>
+    					<goals>
+    						<goal>jar</goal>
+    					</goals>
+    				</execution>
+    			</executions>
+			</plugin>
+
+			<!-- javadoc plugin 
+			Used if you want to include javadocs in a jar file.
+			Defaults to package phase so people usually override it to say install phase in order not to slow system down every time you package
+			For doc see: http://maven.apache.org/plugins/maven-javadoc-plugin/index.html -->
+			<plugin>
+    			<groupId>org.apache.maven.plugin</groupId>
+    			<artifactId>maven-javadoc-plugin</artifactId>
+    			<version>2.9</version>
+    			<executions>
+    				<execution>
+    					<!--  id can be anything, it's just printed in console output -->
+    					<id>attach-javadocs</id>
+    					<phase>verify</phase>
+    					<goals>
+    						<goal>jar</goal>
+    					</goals>
+    				</execution>
+    			</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
