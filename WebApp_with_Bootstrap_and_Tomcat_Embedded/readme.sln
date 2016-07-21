@@ -1,2 +1,5 @@
 Java SE 8: Creating a Web App with Bootstrap and Tomcat Embedded
 http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/basic_app_embedded_tomcat/basic_app-tomcat-embedded.html
+
+to compile: mvn clean package
+tu run goto target folder: java -jar employees-app-1.0-SNAPSHOT-jar-with-dependencies.jar
