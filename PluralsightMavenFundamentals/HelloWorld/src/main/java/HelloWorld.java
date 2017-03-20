@@ -1,7 +1,7 @@
 /* by sln:
  * this folder structure /src/main/java is Maven's convention
  * if you follow that convention you don't need to configure anything and Maven will compile any class in that folder
- * /src/main/java is for Unit testing
+ * /src/test/java is for Unit testing
  * 
  * Goals:
  * go to HelloWorld folder (because you need to run mvn.exe from where the pom.xml file is) 
