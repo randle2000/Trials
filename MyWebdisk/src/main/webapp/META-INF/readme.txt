@@ -1,1 +1,0 @@
-Rename context-dummy.xml to context.xml and edit username and password
